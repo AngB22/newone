@@ -1,0 +1,97 @@
+                    <div mat-dialog-title  class="container d-flex justify-content-center">
+                        <h2>Employees_form</h2>
+                    </div>
+                     
+
+                    <mat-card mat-dialog-content  class="mt-2" [formGroup]="empForm">
+                       
+                        <div class="row">
+                            <mat-form-field class="form-field" appearance="outline">
+                                <mat-label>firstname</mat-label>
+                                <input matInput placeholder="firstname" type="text" formControlName="middlename">
+                            </mat-form-field>
+                            <mat-form-field class="form-field" appearance="outline">
+                                <mat-label>middle_name</mat-label>
+                                <input matInput placeholder="middlename" type="text" formControlName="middlename">
+                            </mat-form-field>
+
+                            <mat-form-field class="form-field" appearance="outline">
+                                <mat-label>Last_name</mat-label>
+                                <input matInput placeholder="Last_name" type="text" formControlName="Lastname">
+                            </mat-form-field>  
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="w-25 " style="height: 50px;">
+                                    <label class="form-label" for="customFile">Profile Upload</label>
+                                  <input type="file" class="form-control" id="customFile"    formControlName="profile">
+                               </div>  
+
+                                <mat-form-field class="form-field" appearance="outline">
+                                    <mat-label>email</mat-label>
+                                    <input matInput placeholder="test@gmail.com"  type="email" formControlName="Email">
+                                </mat-form-field>
+
+
+                                <mat-form-field appearance="outline" class="form-field">
+                                    <mat-label>Date Of Birth</mat-label>
+                                    <input matInput [matDatepicker]="picker" formControlName="D_O_B">
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+
+                                </div>
+                                 
+                                <div class="row">
+                                <mat-radio-group aria-label="Select an option" formControlName="Gender" class="form-field">
+                                    <mat-label>GENDER</mat-label>
+                                    <mat-radio-button value="male">M</mat-radio-button>
+                                    <mat-radio-button value="female">F</mat-radio-button>
+                                    <mat-radio-button value="others">O</mat-radio-button>
+                                            </mat-radio-group>
+
+                                            <mat-form-field appearance="outline" class="form-field">
+                                                <mat-label>Education</mat-label>
+                                                <mat-select formControlName="education">
+                                                    <mat-option *ngFor="let edu of education" [value]="edu">{{edu}}</mat-option></mat-select>
+                                                </mat-form-field> 
+
+                                                <mat-form-field class="form-field" appearance="outline">
+                                                    <mat-label>Company</mat-label> 
+                                                    <input matInput  placeholder="@company" type="text" class="form-field" formControlName="Company">
+                                                </mat-form-field>
+                                        </div>
+
+
+ 
+                                        <div class="row">
+                                            <mat-form-field appearance="outline" class="form-field">
+                                                <mat-label>PACKAGE</mat-label>
+                                                <input matInput placeholder="Current_Package" type="number" formControlName="Package">
+
+                                            </mat-form-field>
+
+                                            <mat-form-field appearance="outline" class="form-field"  >
+                                                <mat-label>Experience</mat-label>
+                                                <input matInput placeholder="@_Experience" type="number" formControlName="Experience">
+                                                <mat-hint>Indian Currency</mat-hint>
+
+                                            </mat-form-field>
+                                        </div>    
+                                <br>
+
+  
+                    <div class="action " mat-dialog-actions >
+                        <button mat-raised-button class="w-25 p-2 bg-danger " style="color:white">
+                            <mat-icon>cancel</mat-icon>
+                            CANCEL</button> &nbsp; &nbsp; &nbsp;
+                        <button mat-raised-button class="w-25 bg-info">
+                            <mat-icon>done_all</mat-icon>
+                            SAVE</button>
+
+
+                    </div>
+
+ 
